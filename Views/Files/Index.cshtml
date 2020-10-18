@@ -1,0 +1,14 @@
+﻿@model string[]
+@{
+    ViewData["Title"] = "Files";
+}
+<h3>@ViewData["Title"]</h3>
+
+@foreach (var (item, index) in Model.Select((value, i) => (value, i)))
+{
+    <li>
+        <a asp-controller="Files"
+        asp-action="content"
+        asp-route-id="@index">@($"File{index+1}.txt")</a>
+    </li>
+}
