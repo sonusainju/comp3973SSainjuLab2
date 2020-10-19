@@ -24,14 +24,14 @@ namespace Aspcore.Controllers
         public IActionResult Index()
         {
             
-            string contentPath = this.Environment.ContentRootPath;
+            string contentPath = Environment.ContentRootPath;
             string[] files = Directory.GetFiles(contentPath + @"\TextFiles");
 
             return View(files);
         }  
         public IActionResult content(int id)
         {     
-            string contentPath = this.Environment.ContentRootPath;
+            string contentPath = Environment.ContentRootPath;
             string[] files = Directory.GetFiles(contentPath + @"\TextFiles");
             
             string myString  ="Empty File";  
